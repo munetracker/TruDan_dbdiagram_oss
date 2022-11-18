@@ -46,7 +46,8 @@ module.exports = configure(function (ctx) {
         type: "http"
       },
       port: 3210,
-      open: true // opens browser window automatically
+      open: 'firefox'
+      // open: true // opens browser window automatically
     },
     framework: {
       config: {

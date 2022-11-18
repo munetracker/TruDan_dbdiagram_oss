@@ -1,0 +1,41 @@
+npm run dev
+
+export to official
+https://dbdiagram.io/d/637741d6c9abfc6111739eae
+
+codes cheatsheet
+Table table_name_one {
+  id bigint(20) pk // auto-increment
+  other_table int(11) [ref: > table_name_two.id]
+  msg varchar(255)
+  created_at datetime
+  amount decimal(25)
+  trulse bool
+}
+
+Table table_name_two {
+  id bigint [pk, increment] // auto-increment
+  is_active tinyint [default: 1]
+}
+
+Table along_table {
+  id bigint [pk, increment] // auto-increment
+  is_active int [default: 1]
+}
+
+Table table_name_three_subone {
+  id bigint(20) pk // auto-increment
+}
+
+Table table_name_three_subtwo {
+  id bigint(20) pk // auto-increment
+}
+
+Table table_name_three_main {
+  id bigint(20) pk // auto-increment
+  ref_one int(11) [ref: > table_name_one.id]
+  ref_two int(11) [ref: > table_name_three_subone.id]
+  ref_three int(11) [ref: > table_name_three_subtwo.id]
+}
+
+
